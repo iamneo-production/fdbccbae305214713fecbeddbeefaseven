@@ -1,1 +1,33 @@
 ﻿@* Write your availableClasses page here... *@
+@model IEnumerable<Class>
+<h1> Available Classes</h1>
+<hr />
+  
+<table border="1">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(d=>d.ClassID)</td>
+            <td>@Html.DisplayNameFor(d=>d.Name)</td>
+            <td>@Html.DisplayNameFor(d=>d.Location)</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var data in @Model)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Name</td>
+                <td>@data.Location</td>
+                <td></td>
+                <td>
+                    @Html.ActionLink("Details","Display",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.ActionLink("Edit","Edit",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.ActionLink("Delete","Delete",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
