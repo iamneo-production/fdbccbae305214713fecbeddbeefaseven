@@ -5,14 +5,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KathakBookingSystem.Data
 {
+    public class ApplicationDbContext: DbContext{
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<Class> Class { get; set; }
-        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
 
         // Write your ApplicationDbContext here...
-
+    }
 }
