@@ -17,5 +17,9 @@ namespace KathakBookingSystem.Data
         public virtual DbSet<Student> Students { get; set; }
 
         // Write your ApplicationDbContext here...
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+// You don't actually ever need to call this
+}
     }
 }
