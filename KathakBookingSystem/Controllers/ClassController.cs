@@ -8,7 +8,13 @@ using Microsoft.EntityFrameworkCore;
 namespace KathakBookingSystem.Controllers
 {
     public class ClassController : Controller
+    {  
+         private readonly BloggingContext _context;
+
+    public MyController(BloggingContext context)
     {
+      _context = context;
+    }
         public IActionResult AvailableClasses()
         {
             ApplicationDbContext db=new ApplicationDbContext();
