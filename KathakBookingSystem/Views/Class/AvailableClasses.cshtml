@@ -7,8 +7,9 @@
     <thead>
         <tr>
             <td>@Html.DisplayNameFor(d=>d.ClassID)</td>
-            <td>@Html.DisplayNameFor(d=>d.Name)</td>
-            <td>@Html.DisplayNameFor(d=>d.Location)</td>
+            <td>@Html.DisplayNameFor(d=>d.StartTime)</td>
+            <td>@Html.DisplayNameFor(d=>d.EndTime)</td>
+            <td>@Html.DisplayNameFor(d=>d.Capacity)</td>
             <td></td>
             <td></td>
         </tr>
@@ -17,16 +18,11 @@
         @foreach(var data in @Model)
         {
             <tr>
-                <td>@data.Id</td>
-                <td>@data.Name</td>
-                <td>@data.Location</td>
-                <td></td>
-                <td>
-                    @Html.ActionLink("Details","Display",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
-                    @Html.ActionLink("Edit","Edit",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
-                    @Html.ActionLink("Delete","Delete",new {id=data.Id}) &nbsp;&nbsp;&nbsp;&nbsp;
-
-                </td>
+                <td>@data.ClassID</td>
+                <td>@data.StartTime</td>
+                <td>@data.EndTime</td>
+                <td>@data.Capacity</td>
+               
             </tr>
         }
     </tbody>
