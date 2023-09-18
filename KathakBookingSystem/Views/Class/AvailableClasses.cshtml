@@ -1,4 +1,4 @@
-﻿@model Class
+﻿@model IEnumerable<Class>
 
 <h1>List of availableClasses</h1>
 <hr>
@@ -6,23 +6,21 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(e=>e.ClassID) </th>
-            <th>@Html.DisplayNameFor(e=>e.Stat) </th>
-            <th>@Html.DisplayNameFor(e=>e.Dept.Name) </th>
-            <th>@Html.DisplayNameFor(e=>e.Salary) </th>
+            <th>@Html.DisplayNameFor(e=>e.StartTime) </th>
+            <th>@Html.DisplayNameFor(e=>e.EndTime) </th>
+            <th>@Html.DisplayNameFor(e=>e.Capacity) </th>
         </tr>
     </thead>
     <tbody>
         @foreach(var data in Model)
         {
             <tr>
-                <td>@Html.DisplayFor(e=>data.Id)</td>
-                <td>@Html.DisplayFor(e=>data.Name)</td>
-                <td>@Html.DisplayFor(e=>data.Dept.Name)</td>
-                <td>@Html.DisplayFor(e=>data.Salary)</td>
+                <td>@Html.DisplayFor(e=>data.ClassID)</td>
+                <td>@Html.DisplayFor(e=>data.StartTime)</td>
+                <td>@Html.DisplayFor(e=>data.Dept.EndTime)</td>
+                <td>@Html.DisplayFor(e=>data.Capacity)</td>
                 <td>
-                    <a asp-controller="Emp" asp-action="Display" asp-route-id=@data.Id>Display</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a asp-controller="Emp" asp-action="Edit" asp-route-id=@data.Id>Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a asp-controller="Emp" asp-action="Delete" asp-route-id=@data.Id>Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    
                 </td>
             </tr>
         }
