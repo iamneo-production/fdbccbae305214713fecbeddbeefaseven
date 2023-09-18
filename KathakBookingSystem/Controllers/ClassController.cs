@@ -12,9 +12,6 @@ namespace KathakBookingSystem.Controllers
         public IActionResult AvailableClasses()
         {
             //Write Functionality to display AvailableClasses return view
-            ApplicationDbContext context=new ApplicationDbContext();
-            var data=context.Classes.ToList();
-            return View(data);
         }
     }
 }
