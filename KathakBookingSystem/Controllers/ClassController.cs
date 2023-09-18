@@ -9,16 +9,16 @@ namespace KathakBookingSystem.Controllers
 {
     public class ClassController : Controller
     {  
-         private readonly BloggingContext _context;
+         private readonly ApplicationDbContext _context;
 
-    public MyController(BloggingContext context)
+    public ClassController(ApplicationDbContext context)
     {
       _context = context;
     }
         public IActionResult AvailableClasses()
         {
-            ApplicationDbContext db=new ApplicationDbContext();
-            var data=db.Classes.ToList();
+            //ApplicationDbContext db=new ApplicationDbContext();
+            var data=_context.Classes.ToList();
             //Write Functionality to display AvailableClasses return view
             return View(data);
         }
