@@ -5,21 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KathakBookingSystem.Data
 {
-    public class ApplicationDbContext: DbContext{
-        public ApplicationDbContext(){}
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
-        {
-        }
-
-        public virtual DbSet<Class> Class { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
-protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123;server=localhost;Database=KathakBookingDB;trusted_connection=false;Persist Security Info=false;Encrypt=false");
-            }
-        }
+    public class ApplicationDbContext : DbContext
+    {
         // Write your ApplicationDbContext here...
     }
 }
