@@ -1,7 +1,8 @@
 ﻿using System;
 
 namespace KathakBookingSystem.Models
-{public class KathakClassBookingException{
+{public class KathakClassBookingException:Exception{
+    public KathakClassBookingException():base(){}
     public KathakClassBookingException(string message):base(message)
         {}
 }
