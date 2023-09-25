@@ -32,7 +32,15 @@ namespace KathakBookingSystem.Controllers
 
         [HttpPost]
         public IActionResult ClassEnrollmentForm(int id, string name, string email)
-        {
+        { var classdata=_context.Classes.ToList();
+            var studentdata=_context.Students.ToList();
+            var studentcount= studentdata.Where(s=>s.ClassID==id).Count();
+            var classcount=_context.Classes.Where(c=>c.ClassID==id).Select(c=>c.Capacity).FirstOrDefault();
+            if(studentcount>=classcount)
+            throw new KathakClassBookingException("Class is fully booked.");
+            var data=_context.Classes.Where(c=>c.ClassID==id);
+            if(data==null) return NotFound();
+            
             // Write functionality for adding students
             // Successfull adding redirect to EnrollmentConfirmation with StudentID
             // Handle KathakClassBookingException "Class is fully booked."
