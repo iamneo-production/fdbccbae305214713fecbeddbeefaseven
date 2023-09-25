@@ -8,8 +8,18 @@ namespace KathakBookingSystem.Controllers
 {
     public class BookingController : Controller
     {
-        public IActionResult ClassEnrollmentForm(int id)
+        private readonly ApplicationDbContext _context;
+          public BookingController(ApplicationDbContext context)
         {
+            _context = context;
+        }
+        public IActionResult ClassEnrollmentForm(int id)
+        { 
+            var classdata=_context.Classes.ToList();
+            var studentdata=_context.Students.ToList();
+            var studentcount= studentdata.Where(s=>s.ClassID==id).Count();
+            var classcount=classdata.Where(c=>c.ClassID==id).Count();
+        
             // Write ClassEnrollmentForm functionality here
             // if students count is greater than Class Capacity Throw a exception "Class is fully booked."
             // if class not found return NotFound() else return View()
