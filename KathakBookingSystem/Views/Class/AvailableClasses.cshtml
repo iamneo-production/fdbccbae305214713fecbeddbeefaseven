@@ -22,23 +22,8 @@
                 <td>@data.ClassID</td>
                 <td>@data.StartTime</td>
                 <td>@data.EndTime</td>
-                
-                @{
-                    int x=5 - @data.Capacity;
-                }
-                <td>@x</td>
-                 @if(@x==0){
-                 <td> Batch is full</td>
-                 }
-             else
-             {<td>   
-
-                    @Html.ActionLink("Book","BatchEnrollmentForm","Booking" ,new {id=data.BatchID}) </td>}
-                <td>
-                             
-
-                </td>
-            </tr>
+                <td>@data.Capacity</td>
+           </tr>
         }
     </tbody>
 </table>
