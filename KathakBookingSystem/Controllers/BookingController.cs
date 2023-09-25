@@ -18,7 +18,7 @@ namespace KathakBookingSystem.Controllers
             var classdata=_context.Classes.ToList();
             var studentdata=_context.Students.ToList();
             var studentcount= studentdata.Where(s=>s.ClassID==id).Count();
-            var classcount=_context.Classes.Select();
+            var classcount=_context.Classes.Where(c=>c.ClassID==id).Select(c=>c.Capacity).FirstOrDefault();
             if(studentcount>=classcount)
             throw new KathakClassBookingException("Class is fully booked.");
             var data=_context.Classes.Where(c=>c.ClassID==id);
