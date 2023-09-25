@@ -13,8 +13,8 @@ namespace KathakBookingSystem.Data
         {
         }
 
-        public virtual DbSet<Class> Class { get; set; }
-        public virtual DbSet<Student> Students { get; set; }
+        public   DbSet<Class> Classes { get; set; }
+        public   DbSet<Student> Students { get; set; }
  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
