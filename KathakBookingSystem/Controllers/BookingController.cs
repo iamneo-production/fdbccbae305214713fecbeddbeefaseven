@@ -21,7 +21,7 @@ namespace KathakBookingSystem.Controllers
             var classcount=classdata.Where(c=>c.ClassID==id).Count();
             if(studentcount>classcount)
             throw new KathakClassBookingException("Class is fully booked.");
-            var data=_context.Classes.Find(id);
+            var data=_context.Classes.Where(c=>c.ClassID==id);
             if(data==null) return NotFound();
             // Write ClassEnrollmentForm functionality here
             // if students count is greater than Class Capacity Throw a exception "Class is fully booked."
