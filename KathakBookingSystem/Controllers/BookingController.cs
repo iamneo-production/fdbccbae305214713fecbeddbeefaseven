@@ -36,7 +36,7 @@ namespace KathakBookingSystem.Controllers
             // Write functionality for adding students
             // Successfull adding redirect to EnrollmentConfirmation with StudentID
             // Handle KathakClassBookingException "Class is fully booked."
-            return View();
+            return RedirectToAction("EnrollmentConfirmation");
         }
 
         public IActionResult EnrollmentConfirmation(int studentId)
