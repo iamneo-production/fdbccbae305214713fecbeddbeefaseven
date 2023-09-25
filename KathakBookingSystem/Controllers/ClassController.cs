@@ -12,6 +12,7 @@ namespace KathakBookingSystem.Controllers
         public IActionResult AvailableClasses()
         {
             //Write Functionality to display AvailableClasses return view
+            return View();
         }
     }
 }

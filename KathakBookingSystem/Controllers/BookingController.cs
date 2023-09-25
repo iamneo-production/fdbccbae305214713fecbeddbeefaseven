@@ -13,6 +13,7 @@ namespace KathakBookingSystem.Controllers
             // Write ClassEnrollmentForm functionality here
             // if students count is greater than Class Capacity Throw a exception "Class is fully booked."
             // if class not found return NotFound() else return View()
+            return View();
         }
 
         [HttpPost]
@@ -21,12 +22,14 @@ namespace KathakBookingSystem.Controllers
             // Write functionality for adding students
             // Successfull adding redirect to EnrollmentConfirmation with StudentID
             // Handle KathakClassBookingException "Class is fully booked."
+            return View();
         }
 
         public IActionResult EnrollmentConfirmation(int studentId)
         {
             // Write functionality to display EnrollmentConfirmation student
             // Return NotFound if null else Return View
+            return View();
         }
     }
 }
